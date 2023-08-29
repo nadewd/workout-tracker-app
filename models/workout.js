@@ -1,7 +1,7 @@
-const mongoose = reqiore('mongoose');
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const setSchema = newSchema ({
+const setSchema = new Schema ({
     weight: Number,
     reps: Number
 })
