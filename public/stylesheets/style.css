@@ -28,3 +28,16 @@ a {
   border-radius: 50%;
   height: 40px;
 }
+
+#sets-table {
+  border-radius: 50%;
+  margin: 15px 0 0 0;
+}
+
+#show-page {
+  font-size: 24px;
+}
+
+video {
+  margin: 10px 0 0 0;
+}

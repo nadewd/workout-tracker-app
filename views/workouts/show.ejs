@@ -1,10 +1,12 @@
 <%- include('../partials/header') %>
 
 <section id="show-page">
-    <div><%= workout.date.toLocaleDateString() %></div>
     <div><%= workout.exercise %></div>
+    <div><%= workout.date.toLocaleDateString() %></div>
+    <% if (workout.exercise === 'RDLs') { %>
+      <video width="500px" height="500px" controls="controls" src="https://www.youtube.com/watch?v=RpwTdghpl0Y&t=6s"></video>
+    <% } %>
   </section>
-  <!-- add to cast form below this comment -->
   
   <br><br><h2>Sets</h2>
   <% if (user) { %>
@@ -20,7 +22,7 @@
   <% } %>
   
   <% if (workout.sets.length) { %>
-    <table>
+    <table id="sets-table">
       <thead>
         <tr>
           <th>Set</th>
@@ -29,9 +31,9 @@
         </tr>
       </thead>
       <tbody>
-        <% workout.sets.forEach(function(set) { %>
+        <% workout.sets.forEach(function(set, index) { %>
           <tr>
-            <!-- .toLocaleDateString() provides a more friendly date format -->
+            <td><%= index + 1 %></td>
             <td><%= set.weight %></td>
             <td><%= set.reps %></td>
           </tr>

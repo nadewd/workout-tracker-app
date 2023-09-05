@@ -7,7 +7,7 @@ module.exports = {
     index,
     edit,
     delete: deleteWorkout, 
-   // update
+    update
 };
 
 async function create(req, res) {
@@ -44,17 +44,17 @@ async function deleteWorkout(req, res) {
     const workouts = await Workout.find({});
     res.render('workouts/index', { title: 'Workout History', workouts });
 } 
-/*
+
 async function update(req, res) {
     try {
-        const workout = await Workout.findOneAndUpdate(req.params.id, req.body);
+        const workout = await Workout.findByIdAndUpdate(req.params.id, req.body);
         const workouts = await Workout.find({});
         res.render('workouts/index', { title: 'Workout History', workouts });
     } catch(err) {
         console.log(err);
         res.render('workouts/edit', { errorMsg: err.message }); 
     }
-} */
+}
 
 
 
