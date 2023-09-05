@@ -20,7 +20,7 @@
         <td><%= workout.exercise %></td>
         <td><%= workout.date.toLocaleDateString() %></td>
         <td><a href="/workouts/<%= workout._id %>">DETAILS</a></td>
-        <% if (user) { %>
+        <% if (user?._id.equals(workout.user)) { %>
           <td><a href="/workouts/<%= workout._id %>/edit">EDIT</a></td>
           <td><form action="/workouts/<%=workout.id %>?_method=DELETE" class="delete-form" method="POST">
             <button type="submit">X</button>

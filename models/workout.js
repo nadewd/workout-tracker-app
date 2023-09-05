@@ -14,7 +14,10 @@ const setSchema = new Schema ({
 
 const workoutSchema = new Schema({
     exercise: String,
-    date: Date,
+    date: {
+        type: Date,
+        required: true
+    },
     sets: [setSchema],
     user: {
         type: Schema.Types.ObjectId,

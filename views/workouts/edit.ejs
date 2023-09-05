@@ -1,9 +1,9 @@
 <%- include('../partials/header') %>
 
-<h2>Enter a New Workout</h2>
 <form action="/workouts/<%= workout._id %>?_method=PUT" method="POST">
     <label>
         <select name="exercise" id="exercise">
+            <option value="<%= workout.exercise %>"><%= workout.exercise %></option>
             <option value="Bulgarian Split Squats">Bulgarian Split Squats</option>
             <option value="Bent Over Rows">Bent Over Rows</option>
             <option value="Curls">Curls</option>
@@ -19,13 +19,12 @@
             <option value="Rear Delt Flys">Rear Delt Flys</option>
             <option value="Ring Push Ups">Ring Push Ups</option>
             <option value="Squats">Squats</option>
-            <option value="Other">Other</option>
         </select>
     </label>
     <label>
-        <input type="date" name="date">
+        <input type="datetime-local" name="date" value="<%= workout.date %>">
     </label>
-    <button type="submit">Add Workout</button>
+    <button type="submit">Update Workout</button>
 </form>
 
 <%- include('../partials/footer') %>

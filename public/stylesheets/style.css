@@ -1,6 +1,7 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: coral;
 }
 
 a {
@@ -8,14 +9,12 @@ a {
 }
 
 .login {
-  display: flex;
-  justify-content: center;
   align-items: center;
   height: 34px;
 }
 
 .login img {
-  height: 30px;
+  height: 15px;
 }
 
 .workout-user {
@@ -29,15 +28,44 @@ a {
   height: 40px;
 }
 
-#sets-table {
-  border-radius: 50%;
-  margin: 15px 0 0 0;
-}
-
 #show-page {
   font-size: 24px;
 }
 
-video {
-  margin: 10px 0 0 0;
+iframe {
+  margin: 40px 0 0 0;
+}
+
+h1, h2, h3 {
+  text-align: center;
+}
+
+main {
+  text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+  width: 80%;
+  margin: 20px auto;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+a {
+  color: wheat;
+}
+
+#home-login {
+  display: flex;
+  justify-content: center;
+  font-size: 23px;
+}
+
+#home-login img {
+  height: 40px;
 }

@@ -11,6 +11,9 @@ module.exports = {
 };
 
 async function create(req, res) {
+    req.body.user = req.user._id;
+    req.body.userName = req.user.name;
+    req.body.userAvatar = req.user.avatar;
     try {
         const workout = await Workout.create(req.body);
         res.redirect(`/workouts/${workout._id}`);
@@ -30,7 +33,7 @@ async function show(req, res) {
 }
 
 async function index(req, res) {
-    const workouts = await Workout.find({});
+    const workouts = await Workout.find({}).sort({ date: -1 });
     res.render('workouts/index', { title: 'Workout History', workouts });
 }  
 
@@ -40,9 +43,8 @@ async function edit(req, res) {
 }
 
 async function deleteWorkout(req, res) {
-    const workout = await Workout.findOneAndDelete({'_id': req.params.id});
-    const workouts = await Workout.find({});
-    res.render('workouts/index', { title: 'Workout History', workouts });
+    await Workout.findByIdAndRemove(req.params.id);
+    res.redirect('/workouts');
 } 
 
 async function update(req, res) {
