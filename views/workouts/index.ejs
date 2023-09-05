@@ -1,0 +1,34 @@
+<%- include('../partials/header') %>
+
+<table id="list">
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Exercise</th>
+      <th>Date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% let total = 0 %>
+    <% workouts.forEach(function(workout) { %>
+      <% total += workout %>
+      <tr>
+        <td class="workout-user"><img alt="avatar" src="<%= workout.userAvatar %>" referrerpolicy="no-referrer" ><%= workout.userName %></td>
+        <td><%= workout.exercise %></td>
+        <td><%= workout.date.toLocaleDateString() %></td>
+        <td><a href="/workouts/<%= workout._id %>">DETAILS</a></td>
+        <% if (user) { %>
+          <td><a href="/workouts/<%= workout._id %>/edit">EDIT</a></td>
+          <td><form action="/workouts/<%=workout.id %>?_method=DELETE" class="delete-form" method="POST">
+            <button type="submit">X</button>
+          </form></td>
+        <% } %>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+  
+<%- include('../partials/footer') %>

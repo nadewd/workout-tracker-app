@@ -1,0 +1,31 @@
+<%- include('../partials/header') %>
+
+<h2>Enter a New Workout</h2>
+<form action="/workouts/<%= workout._id %>?_method=PUT" method="POST">
+    <label>
+        <select name="exercise" id="exercise">
+            <option value="Bulgarian Split Squats">Bulgarian Split Squats</option>
+            <option value="Bent Over Rows">Bent Over Rows</option>
+            <option value="Curls">Curls</option>
+            <option value="Face Pulls">Face Pulls</option>
+            <option value="Hanging Leg Raises">Hanging Leg Raises</option>
+            <option value="Incline DB Press">Incline DB Press</option>
+            <option value="Inverted Ring Rows">Inverted Ring Rows</option>
+            <option value="Kettlebell Swings">Kettlebell Swings</option>
+            <option value="Lateral Raises">Lateral Raises</option>
+            <option value="Tricep Extensions">Tricep Extensions</option>
+            <option value="Pull Ups">Pull Ups</option>
+            <option value="RDLs">RDLs</option>
+            <option value="Rear Delt Flys">Rear Delt Flys</option>
+            <option value="Ring Push Ups">Ring Push Ups</option>
+            <option value="Squats">Squats</option>
+            <option value="Other">Other</option>
+        </select>
+    </label>
+    <label>
+        <input type="date" name="date">
+    </label>
+    <button type="submit">Add Workout</button>
+</form>
+
+<%- include('../partials/footer') %>

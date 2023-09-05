@@ -1,21 +1,23 @@
+<%- include('../partials/header') %>
+
 <section id="show-page">
-    <div><%= title %></div>
-    <div><%= workout.date %></div>
+    <div><%= workout.date.toLocaleDateString() %></div>
     <div><%= workout.exercise %></div>
   </section>
   <!-- add to cast form below this comment -->
   
   <br><br><h2>Sets</h2>
-  <form id="add-workout-form" method="POST"
-    action="/workouts/<%= workout._id %>/sets">
-    <label>Weight
+  <% if (user) { %>
+    <form id="add-workout-form" method="POST" action="/workouts/<%= workout._id %>/sets">
+      <label>Weight
         <input type="number" name="weight">
-    </label>
-    <label>Reps
+      </label>
+      <label>Reps
         <input type="number" name="reps"> 
-    </label>
-    <input type="submit" value="Add Set">
-  </form>
+      </label>
+      <input type="submit" value="Add Set">
+    </form>
+  <% } %>
   
   <% if (workout.sets.length) { %>
     <table>
@@ -37,3 +39,5 @@
       </tbody>
     </table>
     <% } %>
+
+<%- include('../partials/footer') %>   
