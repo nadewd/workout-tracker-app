@@ -4,12 +4,16 @@ I created this workout application to help users track their exercises in order 
 
 ## Screenshots
 
+Workout History Page
 ![Workout History Page](imgs/history.png)
 
+Workout Detail Page
 ![Workout Detail Page](imgs/detail.png)
 
+New Workout Page
 ![New Workout Page](imgs/new.png)
 
+Edit Workout Page
 ![Edit Workout Page](imgs/edit.png)
 
 ## Technologies Used
@@ -21,7 +25,7 @@ I created this workout application to help users track their exercises in order 
 - MongoDB
 
 ## Getting Started
-Click ![here](https://workout-tracker-nd-d36b6671bd3d.herokuapp.com/) to access the app
+Click [here](https://workout-tracker-nd-d36b6671bd3d.herokuapp.com/) to access the app
 
 ## Next Steps
 - Add feature to add, delete, and edit sets
